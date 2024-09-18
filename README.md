@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+First of all, I read the requirements of the assessment and checked the requirements of backend, frontend and database.
 
-## Getting Started
+After getting the requirements, I created a rough design on how the system will look and how all the API communication will be done. After that, I started working on the project step by step.
 
-First, run the development server:
+Initially, my approach was to integrate the Supabase database with the Node.js backend APIs. So, I created a Supabase project and created a new PostgresSQL database. I got the project API key and URL which I can use in my Node.js project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+So, after getting Supabase API key and URL, I installed Supabase library in the nodejs project and setup a connection with database. Once, the database connection was set up, I created the CRUD APIs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+These CRUD APIs were for adding, updating, reading and deleting the tasks in the todo list.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+These APIs were created in the Node.js project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+GET /api/tasks - Get all the tasks
 
-## Learn More
+POST /api/tasks - Add a new task
 
-To learn more about Next.js, take a look at the following resources:
+PUT /api/tasks/:id - Update a particular task
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+DELETE /api/tasks/:id - Delete a particular task
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+I tested the backend on localhost and found that it was working so deployed the backend on Vercel.
 
-## Deploy on Vercel
+Then, the next step was designing the front end part. So, I created a new Next.js project with Tailwind CSS for frontend and then I started designing UI Components. So, I installed a ShadCN component which can be reused in the Next.js project. I used Button, Select and Input as ShadCN components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Now, I integrated the frontend with backend by creating the functions to add, update, delete and read the tasks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I created a basic UI for task list where you get to see tasks with 3 statuses:
+
+Pending - Tasks to do
+Doing - Tasks you are currently doing
+Done - Tasks which are done
+
+After that I created a UI for adding a task
+
+I just simply added a Input box and button to add the task.
+
+After that, I added functionality to Edit and Delete the task for each task in task list
+
+When you click Edit, you can change task name and status using Update button.
+
+When you click Delete, your task will be deleted from the task list.
+
+I thoroughly tested each and every functionality on localhost.
+
+After that, I deployed this Next.js frontend on Vercel.
+
+This is the Vercel frontend link: https://todo-ui-screen.vercel.app/
