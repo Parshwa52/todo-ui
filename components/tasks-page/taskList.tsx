@@ -24,7 +24,14 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) => {
                 <span className="scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors ">
                   {task.task}
                 </span>
-                <Button onClick={() => onEdit(task)}>Edit</Button>
+                <Button
+                  onClick={() => {
+                    window.scrollTo(0, document.body.scrollHeight);
+                    onEdit(task);
+                  }}
+                >
+                  Edit
+                </Button>
                 <Button onClick={() => onDelete(task.id)}>Delete</Button>
               </div>
             </li>
@@ -39,7 +46,14 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) => {
                 <span className="scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors ">
                   {task.task}
                 </span>
-                <Button onClick={() => onEdit(task)}>Edit</Button>
+                <Button
+                  onClick={() => {
+                    window.scrollTo(0, document.body.scrollHeight);
+                    onEdit(task);
+                  }}
+                >
+                  Edit
+                </Button>
                 <Button onClick={() => onDelete(task.id)}>Delete</Button>
               </div>
             </li>
@@ -54,7 +68,14 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) => {
                 <span className="scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors ">
                   {task.task}
                 </span>
-                <Button onClick={() => onEdit(task)}>Edit</Button>
+                <Button
+                  onClick={() => {
+                    window.scrollTo(0, document.body.scrollHeight);
+                    onEdit(task);
+                  }}
+                >
+                  Edit
+                </Button>
                 <Button onClick={() => onDelete(task.id)}>Delete</Button>
               </div>
             </li>
